@@ -63,7 +63,7 @@ Now you can get current price for your category:
 
 .. code-block:: python
 
-     price_level = self.campaign.get_current_price_level(category='company')
+     price_level = model.get_current_price_level(category='company')
 
 Features
 --------
