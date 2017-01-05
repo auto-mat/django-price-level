@@ -2,5 +2,5 @@
 from django.apps import AppConfig
 
 
-class DjangoPriceLevelConfig(AppConfig):
-    name = 'django_price_level'
+class PriceLevelsConfig(AppConfig):
+    name = 'price_levels'

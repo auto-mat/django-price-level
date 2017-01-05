@@ -3,6 +3,7 @@ import sys
 try:
     from django.conf import settings
     from django.test.utils import get_runner
+    from model_utils import Choices
 
     settings.configure(
         DEBUG=True,
@@ -18,9 +19,15 @@ try:
             "django.contrib.contenttypes",
             "django.contrib.sites",
             "price_level",
+            "tests",
         ],
         SITE_ID=1,
-        MIDDLEWARE_CLASSES=(),
+        MIDDLEWARE_CLASSES=(
+            'author.middlewares.AuthorDefaultBackendMiddleware',
+        ),
+        PRICE_LEVEL_MODEL='tests.PricableModel',
+        PRICE_LEVEL_CATEGORY_CHOICES=Choices(('basic', 'Basic'), ('company', 'For companies')),
+        PRICE_LEVEL_CATEGORY_DEFAULT='basic',
     )
 
     try:
