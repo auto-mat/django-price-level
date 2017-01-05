@@ -50,7 +50,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author='Petr Dlouhý',
     author_email='petr.dlouhy@email.cz',
-    url='https://github.com/petr.dlouhy/django-price-level',
+    url='https://github.com/PetrDlouhy/django-price-level',
     packages=[
         'price_level',
     ],
