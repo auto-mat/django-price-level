@@ -5,8 +5,8 @@ django-price-level
 .. image:: https://badge.fury.io/py/django-price-level.png
     :target: https://badge.fury.io/py/django-price-level
 
-.. image:: https://travis-ci.org/petr.dlouhy/django-price-level.png?branch=master
-    :target: https://travis-ci.org/petr.dlouhy/django-price-level
+.. image:: https://travis-ci.org/PetrDlouhy/django-price-level.png?branch=master
+    :target: https://travis-ci.org/PetrDlouhy/django-price-level
 
 Adds time limited price levels to your model class.
 
