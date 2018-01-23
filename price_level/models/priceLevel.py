@@ -16,6 +16,7 @@ class PriceLevel(TimeStampedModel, models.Model):
     pricable = models.ForeignKey(
         settings.PRICE_LEVEL_MODEL,
         verbose_name=_("Pricable"),
+        on_delete=models.CASCADE,
     )
     name = models.CharField(
         verbose_name=_("Name"),
