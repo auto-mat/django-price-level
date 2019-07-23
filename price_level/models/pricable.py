@@ -7,9 +7,11 @@ from django.db import models
 class Pricable(models.Model):
     def get_current_price_level(
             self,
-            date_time=datetime.datetime.now(),
+            date_time=None,
             category=settings.PRICE_LEVEL_CATEGORY_DEFAULT,
     ):
+        if date_time is None:
+            date_time = datetime.datetime.now()
         price_level_query = self.pricelevel_set.filter(
             takes_effect_on__lte=date_time,
             category=category,
