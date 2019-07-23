@@ -1,10 +1,11 @@
 import sys
 
 try:
-    from django.conf import settings
+    import django.conf
     from django.test.utils import get_runner
     from model_utils import Choices
 
+    settings = django.conf.settings
     settings.configure(
         DEBUG=True,
         USE_TZ=True,
@@ -21,10 +22,10 @@ try:
             "tests",
         ],
         SITE_ID=1,
-        MIDDLEWARE_CLASSES=(
+        MIDDLEWARE=(
             'author.middlewares.AuthorDefaultBackendMiddleware',
         ),
-        PRICE_LEVEL_MODEL='tests.PricableModel',
+        PRICE_LEVEL_MODEL='tests.PriceableModel',
         PRICE_LEVEL_CATEGORY_CHOICES=Choices(('basic', 'Basic'), ('company', 'For companies')),
         PRICE_LEVEL_CATEGORY_DEFAULT='basic',
     )
