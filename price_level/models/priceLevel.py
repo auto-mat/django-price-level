@@ -35,8 +35,17 @@ class PriceLevel(TimeStampedModel, models.Model):
         choices=settings.PRICE_LEVEL_CATEGORY_CHOICES,
         default=settings.PRICE_LEVEL_CATEGORY_DEFAULT,
     )
+    description = models.TextField(
+        verbose_name=_("HTML description of pricelevel"),
+        default='',
+    )
     takes_effect_on = models.DateTimeField(
         verbose_name=_("Date, when this takes effect"),
+    )
+    offer_ends = models.DateTimeField(
+        verbose_name=_("Date/time when the price level is no longer available."),
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
