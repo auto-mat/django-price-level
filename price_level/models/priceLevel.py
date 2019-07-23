@@ -45,6 +45,11 @@ class PriceLevel(TimeStampedModel, models.Model):
     takes_effect_on = models.DateTimeField(
         verbose_name=_("Date, when this takes effect"),
     )
+    offer_ends = models.DateTimeField(
+        verbose_name=_("Date/time when the price level is no longer available."),
+        null=True,
+        blank=True,
+    )
 
     def __str__(self):
         """Return name as string representation."""
