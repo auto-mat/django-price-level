@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db import models
 
 
-class Pricable(models.Model):
+class Priceable(models.Model):
     def get_current_price_level(
             self,
             date_time=None,
@@ -21,3 +21,7 @@ class Pricable(models.Model):
 
     class Meta:
         abstract = True
+
+
+class Pricable(Priceable):  # Old misspelling
+    pass

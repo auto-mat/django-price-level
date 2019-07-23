@@ -13,9 +13,9 @@ from model_utils.models import TimeStampedModel
 class PriceLevel(TimeStampedModel, models.Model):
     """Stores price levels."""
 
-    pricable = models.ForeignKey(
+    priceable = models.ForeignKey(
         settings.PRICE_LEVEL_MODEL,
-        verbose_name=_("Pricable"),
+        verbose_name=_("Priceable"),
         on_delete=models.CASCADE,
     )
     name = models.CharField(

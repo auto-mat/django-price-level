@@ -7,5 +7,5 @@ from . import models
 class PriceLevelAdmin(admin.ModelAdmin):
     """Admin model for PriceLevels."""
 
-    list_display = ('name', 'pricable', 'price', 'category', 'takes_effect_on')
-    list_filter = ('pricable', 'category')
+    list_display = ('name', 'priceable', 'price', 'category', 'takes_effect_on', 'offer_ends')
+    list_filter = ('priceable', 'category')

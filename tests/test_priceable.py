@@ -5,7 +5,7 @@
 test_django-price-level
 ------------
 
-Tests for `Pricable` models module.
+Tests for `Priceable` models module.
 """
 import datetime
 
@@ -22,7 +22,7 @@ class TestDjango_price_level(TestCase):
             name="Foo price level",
             takes_effect_on=datetime.date(year=2017, month=1, day=1),
         )
-        result = price_level.pricable.get_current_price_level(date_time=datetime.date(year=2017, month=1, day=1))
+        result = price_level.priceable.get_current_price_level(date_time=datetime.date(year=2017, month=1, day=1))
         self.assertEqual(result, price_level)
 
     def test_get_current_price_level_none(self):
@@ -31,5 +31,5 @@ class TestDjango_price_level(TestCase):
             name="Foo price level",
             takes_effect_on=datetime.date(year=2017, month=1, day=2),
         )
-        result = price_level.pricable.get_current_price_level(date_time=datetime.date(year=2017, month=1, day=1))
+        result = price_level.priceable.get_current_price_level(date_time=datetime.date(year=2017, month=1, day=1))
         self.assertEqual(result, None)

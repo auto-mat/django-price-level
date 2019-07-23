@@ -1,7 +1,7 @@
 from django.db import models
 
-from price_level.models import Pricable
+from price_level.models import Priceable
 
 
-class PricableModel(Pricable, models.Model):
+class PriceableModel(Priceable, models.Model):
     pass
