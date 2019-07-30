@@ -40,6 +40,9 @@ Configure in your settings the desired model:
    PRICE_LEVEL_MODEL = 'your.Model'
    PRICE_LEVEL_CATEGORY_CHOICES = Choices(('basic', _('Basic')), ('company', _('For companies')))
    PRICE_LEVEL_CATEGORY_DEFAULT = 'basic'
+   AWARD_LEVEL_CATEGORY_CHOICES = Choices(('basic', _('Basic')), ('company', _('For companies')))
+   AWARD_LEVEL_CATEGORY_DEFAULT = 'basic'
+
 
 Add author middleware in settings:
 

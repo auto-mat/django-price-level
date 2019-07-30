@@ -25,6 +25,12 @@ class PriceLevel(TimeStampedModel, models.Model):
     def priceable(self, v):
         self.pricable = v
 
+    award_level = models.ForeignKey(
+        'AwardLevel',
+        default=None,
+        null=True,
+        on_delete=models.CASCADE,
+    )
     name = models.CharField(
         verbose_name=_("Name"),
         max_length=127,

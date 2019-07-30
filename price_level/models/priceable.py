@@ -10,6 +10,7 @@ class Pricable(models.Model):
             self,
             date_time=None,
             category=settings.PRICE_LEVEL_CATEGORY_DEFAULT,
+            award_level=None,
     ):
         if date_time is None:
             date_time = datetime.datetime.now()
@@ -18,6 +19,8 @@ class Pricable(models.Model):
             takes_effect_on__lte=date_time,
             category=category,
         )
+        if award_level is not None:
+            price_level_query.filter(award_level=award_level)
         return price_level_query
 
     def get_current_price_level(self, *args, **kwargs):
