@@ -13,11 +13,6 @@ from model_utils.models import TimeStampedModel
 class AwardLevel(TimeStampedModel, models.Model):
     """Stores award levels."""
 
-    priceable = models.ForeignKey(
-        settings.PRICE_LEVEL_MODEL,
-        verbose_name=_("Priceable"),
-        on_delete=models.CASCADE,
-    )
     name = models.CharField(
         verbose_name=_("Name"),
         max_length=127,
@@ -28,8 +23,8 @@ class AwardLevel(TimeStampedModel, models.Model):
     category = models.CharField(
         verbose_name=_("Category"),
         max_length=60,
-        choices=settings.AWARD_LEVEL_CATEGORY_CHOICES,
-        default=settings.AWARD_LEVEL_CATEGORY_DEFAULT,
+        choices=getattr(settings, 'AWARD_LEVEL_CATEGORY_CHOICES', []),
+        default=getattr(settings, 'AWARD_LEVEL_CATEGORY_DEFAULT', ''),
     )
 
 

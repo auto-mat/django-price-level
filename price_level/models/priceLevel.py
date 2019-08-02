@@ -45,8 +45,8 @@ class PriceLevel(TimeStampedModel, models.Model):
     category = models.CharField(
         verbose_name=_("Category"),
         max_length=20,
-        choices=settings.PRICE_LEVEL_CATEGORY_CHOICES,
-        default=settings.PRICE_LEVEL_CATEGORY_DEFAULT,
+        choices=getattr(settings, 'PRICE_LEVEL_CATEGORY_CHOICES', []),
+        default=getattr(settings, 'PRICE_LEVEL_CATEGORY_DEFAULT', ''),
     )
     takes_effect_on = models.DateTimeField(
         verbose_name=_("Date, when this takes effect"),
